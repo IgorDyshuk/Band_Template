@@ -13,6 +13,7 @@ body {
   margin: 0;
   font-size: 15px;
   line-height: 1.5;
+  min-height: 100vh;
 }
 
 .black {
@@ -88,6 +89,28 @@ i {
 
 .bar-item {
   display: inline-block;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar a {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-button {
+  display: none;
 }
 
 .right {
@@ -304,4 +327,19 @@ i {
 .social-container a:hover::after {
   transform: translateY(-32px) rotate(0);
   opacity: 1;
+}
+
+@media (max-width: 750px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    width: 75%;
+  }
 }

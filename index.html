@@ -14,7 +14,20 @@
   </head>
   <body>
     <div class="top">
-      <div class="bar black">
+      <div class="sidebar black">
+        <a onclick="closeSidebar()" href="#" class="bar-item button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#e8eaed"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
+        </a>
         <a href="#HOME" class="bar-item button padding-large">HOME</a>
         <a href="#BAND" class="bar-item button padding-large">BAND</a>
         <a href="#TOUR" class="bar-item button padding-large">TOUR</a>
@@ -23,6 +36,38 @@
           href="#"
           onclick="return false;"
           class="bar-item button padding-large"
+          >MORE</a
+        >
+      </div>
+      <div class="bar black">
+        <a onclick="showSidebar()" href="#" class="bar-item button menu-button"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#e8eaed"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            /></svg
+        ></a>
+        <a href="#HOME" class="bar-item button padding-large hideOnMobile"
+          >HOME</a
+        >
+        <a href="#BAND" class="bar-item button padding-large hideOnMobile"
+          >BAND</a
+        >
+        <a href="#TOUR" class="bar-item button padding-large hideOnMobile"
+          >TOUR</a
+        >
+        <a href="#CONTACT" class="bar-item button padding-large hideOnMobile"
+          >CONTACT</a
+        >
+        <a
+          href="#"
+          onclick="return false;"
+          class="bar-item button padding-large hideOnMobile"
           >MORE</a
         >
         <a href="" class="bar-item button right hover-red padding-large">
@@ -304,5 +349,17 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+      }
+
+      function closeSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
+    </script>
   </body>
 </html>
