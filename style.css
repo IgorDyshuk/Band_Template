@@ -329,12 +329,16 @@ i {
   opacity: 1;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 650px) {
   .hideOnMobile {
     display: none;
   }
   .menu-button {
     display: block;
+  }
+
+  .row {
+    flex-direction: column;
   }
 }
 

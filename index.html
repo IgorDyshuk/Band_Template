@@ -352,11 +352,13 @@
 
     <script>
       function showSidebar() {
+        event.preventDefault();
         const sidebar = document.querySelector(".sidebar");
         sidebar.style.display = "flex";
       }
 
       function closeSidebar() {
+        event.preventDefault();
         const sidebar = document.querySelector(".sidebar");
         sidebar.style.display = "none";
       }
