@@ -94,13 +94,14 @@ i {
 .sidebar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -100%;
   height: 100vh;
   width: 250px;
   z-index: 999;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  transition: left 0.3s ease-out;
 }
 
 .sidebar a {
@@ -111,6 +112,16 @@ i {
 
 .menu-button {
   display: none;
+}
+
+.icon {
+  fill: white;
+}
+
+.menu-button:hover {
+  .icon {
+    fill: black;
+  }
 }
 
 .right {

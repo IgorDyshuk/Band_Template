@@ -15,26 +15,50 @@
   <body>
     <div class="top">
       <div class="sidebar black">
-        <a onclick="closeSidebar()" href="#" class="bar-item button">
+        <a
+          onclick="closeSidebarDefault()"
+          href="#"
+          class="bar-item button menu-button"
+        >
           <svg
+            class="icon"
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
             width="24px"
-            fill="#e8eaed"
           >
             <path
               d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
             />
           </svg>
         </a>
-        <a href="#HOME" class="bar-item button padding-large">HOME</a>
-        <a href="#BAND" class="bar-item button padding-large">BAND</a>
-        <a href="#TOUR" class="bar-item button padding-large">TOUR</a>
-        <a href="#CONTACT" class="bar-item button padding-large">CONTACT</a>
         <a
+          onclick="closeSidebar()"
           href="#"
-          onclick="return false;"
+          class="bar-item button padding-large"
+          >HOME</a
+        >
+        <a
+          href="#BAND"
+          onclick="closeSidebar(event)"
+          class="bar-item button padding-large"
+          >BAND</a
+        >
+        <a
+          href="#TOUR"
+          onclick="closeSidebar(event)"
+          class="bar-item button padding-large"
+          >TOUR</a
+        >
+        <a
+          href="#CONTACT"
+          onclick="closeSidebar(event)"
+          class="bar-item button padding-large"
+          >CONTACT</a
+        >
+        <a
+          href="#footer"
+          onclick="closeSidebar(event)"
           class="bar-item button padding-large"
           >MORE</a
         >
@@ -42,11 +66,11 @@
       <div class="bar black">
         <a onclick="showSidebar()" href="#" class="bar-item button menu-button"
           ><svg
+            class="icon"
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             viewBox="0 -960 960 960"
             width="24px"
-            fill="#e8eaed"
           >
             <path
               d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
@@ -64,10 +88,7 @@
         <a href="#CONTACT" class="bar-item button padding-large hideOnMobile"
           >CONTACT</a
         >
-        <a
-          href="#"
-          onclick="return false;"
-          class="bar-item button padding-large hideOnMobile"
+        <a href="#footer" class="bar-item button padding-large hideOnMobile"
           >MORE</a
         >
         <a
@@ -340,7 +361,7 @@
       />
 
       <!-- footer -->
-      <footer class="container padding-64 center">
+      <footer id="footer" class="container padding-64 center">
         <h2 class="wide center">OUR BAND IN SOCIAL MEDIA</h2>
         <div class="social-container padding-32">
           <a
@@ -436,13 +457,25 @@
       function showSidebar() {
         event.preventDefault();
         const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "flex";
+        <!-- sidebar.style.display = "flex"; -->
+        sidebar.style.left = "0";
       }
 
-      function closeSidebar() {
+      function closeSidebarDefault() {
         event.preventDefault();
         const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "none";
+        sidebar.style.left = "-100%";
+      }
+
+      function closeSidebar(event) {
+        if (event) {
+          const href = event.currentTarget.getAttribute("href");
+          if (!href || href === "#") {
+            event.preventDefault();
+          }
+        }
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.left = "-100%";
       }
     </script>
   </body>
