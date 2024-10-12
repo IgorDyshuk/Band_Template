@@ -310,7 +310,9 @@ i {
 }
 
 .social-container {
+  max-width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   align-items: center;
@@ -417,6 +419,29 @@ i {
   form .button {
     width: 100%;
     border-radius: 0.25em;
+  }
+
+  @media (max-width: 650px) {
+    .social-container a::before {
+      transform: translateY(-10px) rotate(25deg);
+      font-size: 12px;
+      padding: 0.2em 0.5em;
+    }
+
+    .social-container a:hover::before {
+      transform: translateY(-43px) rotate(0);
+    }
+
+    .social-container a::after {
+      transform: translateY(0) rotate(25deg);
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 8px solid var(--accent-color);
+    }
+
+    .social-container a:hover::after {
+      transform: translateY(-32px) rotate(0);
+    }
   }
 }
 
