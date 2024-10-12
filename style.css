@@ -202,7 +202,7 @@ i {
 
 .margin-right {
   float: right;
-  margin-right: 16px !important;
+  margin-right: 0.5rem !important;
 }
 
 .row {
@@ -430,7 +430,7 @@ i {
   }
 
   .social-container a:hover::before {
-    transform: translateY(-2.8rem) rotate(0);
+    transform: translateY(-2.87rem) rotate(0);
   }
 
   .social-container a::after {
